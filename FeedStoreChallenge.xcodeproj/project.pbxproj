@@ -20,6 +20,8 @@
 		08CE2BB52285BEF100183A1B /* FeedStoreChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CE2BB42285BEF100183A1B /* FeedStoreChallengeTests.swift */; };
 		4960716A2580A6C50080625D /* CoreDataFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496071692580A6C50080625D /* CoreDataFeedStore.swift */; };
 		49BBDC312585091F00FB06E4 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BBDC302585091F00FB06E4 /* XCTestCase+MemoryLeakTracking.swift */; };
+		49BBDC3925850C0800FB06E4 /* CoreDataFeedStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49BBDC3725850C0800FB06E4 /* CoreDataFeedStore.xcdatamodeld */; };
+		49BBDC3D25850DBE00FB06E4 /* ManagedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BBDC3C25850DBE00FB06E4 /* ManagedCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		08CE2BB42285BEF100183A1B /* FeedStoreChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreChallengeTests.swift; sourceTree = "<group>"; };
 		496071692580A6C50080625D /* CoreDataFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedStore.swift; sourceTree = "<group>"; };
 		49BBDC302585091F00FB06E4 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		49BBDC3825850C0800FB06E4 /* CoreDataFeedStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataFeedStore.xcdatamodel; sourceTree = "<group>"; };
+		49BBDC3C25850DBE00FB06E4 /* ManagedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 			children = (
 				08CE2B8D2285BBD100183A1B /* FeedStoreChallenge */,
 				496071682580A6830080625D /* CoreDataFeedSotre */,
+				49BBDC3625850BDD00FB06E4 /* CoreDataModel */,
 				08CE2B982285BBD100183A1B /* Tests */,
 				08CE2B8C2285BBD100183A1B /* Products */,
 			);
@@ -139,6 +144,15 @@
 				49BBDC302585091F00FB06E4 /* XCTestCase+MemoryLeakTracking.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		49BBDC3625850BDD00FB06E4 /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				49BBDC3725850C0800FB06E4 /* CoreDataFeedStore.xcdatamodeld */,
+				49BBDC3C25850DBE00FB06E4 /* ManagedCache.swift */,
+			);
+			path = CoreDataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,8 +277,10 @@
 			files = (
 				08CE2BB22285BCE700183A1B /* XCTestCase+FailableDeleteFeedStoreSpecs.swift in Sources */,
 				08CE2BB02285BCE700183A1B /* FeedStoreSpecs.swift in Sources */,
+				49BBDC3D25850DBE00FB06E4 /* ManagedCache.swift in Sources */,
 				49BBDC312585091F00FB06E4 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				084BB13C24FE50A10091C705 /* FeedStoreIntegrationTests.swift in Sources */,
+				49BBDC3925850C0800FB06E4 /* CoreDataFeedStore.xcdatamodeld in Sources */,
 				08CE2BB12285BCE700183A1B /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift in Sources */,
 				08CE2BAF2285BCE700183A1B /* XCTestCase+FeedStoreSpecs.swift in Sources */,
 				08CE2BB32285BCE700183A1B /* XCTestCase+FailableInsertFeedStoreSpecs.swift in Sources */,
@@ -533,6 +549,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		49BBDC3725850C0800FB06E4 /* CoreDataFeedStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				49BBDC3825850C0800FB06E4 /* CoreDataFeedStore.xcdatamodel */,
+			);
+			currentVersion = 49BBDC3825850C0800FB06E4 /* CoreDataFeedStore.xcdatamodel */;
+			path = CoreDataFeedStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 08CE2B822285BBD100183A1B /* Project object */;
 }
