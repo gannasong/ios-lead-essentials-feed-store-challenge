@@ -16,31 +16,29 @@ class FeedStoreIntegrationTests: XCTestCase {
 	
 	override func setUp() {
 		super.setUp()
-		
 		setupEmptyStoreState()
 	}
 	
 	override func tearDown() {
 		super.tearDown()
-		
 		undoStoreSideEffects()
 	}
 	
 	func test_retrieve_deliversEmptyOnEmptyCache() {
-		//        let sut = makeSUT()
-		//
-		//        expect(sut, toRetrieve: .empty)
+		let sut = makeSUT()
+
+		expect(sut, toRetrieve: .empty)
 	}
 	
 	func test_retrieve_deliversFeedInsertedOnAnotherInstance() {
-		//        let storeToInsert = makeSUT()
-		//        let storeToLoad = makeSUT()
-		//        let feed = uniqueImageFeed()
-		//        let timestamp = Date()
-		//
-		//        insert((feed, timestamp), to: storeToInsert)
-		//
-		//        expect(storeToLoad, toRetrieve: .found(feed: feed, timestamp: timestamp))
+//		let storeToInsert = makeSUT()
+//		let storeToLoad = makeSUT()
+//		let feed = uniqueImageFeed()
+//		let timestamp = Date()
+//
+//		insert((feed, timestamp), to: storeToInsert)
+//
+//		expect(storeToLoad, toRetrieve: .found(feed: feed, timestamp: timestamp))
 	}
 	
 	func test_insert_overridesFeedInsertedOnAnotherInstance() {
@@ -71,8 +69,13 @@ class FeedStoreIntegrationTests: XCTestCase {
 	
 	// - MARK: Helpers
 	
-	private func makeSUT() -> FeedStore {
-		fatalError("Must be implemented")
+	private func makeSUT(file: StaticString = #file, line: UInt = #line) -> FeedStore {
+		let storeBundle = Bundle(for: CoreDataFeedStore.self)
+		let storeURL = testSpecificStoreURL()
+		let sut = try! CoreDataFeedStore(storeURL: storeURL, bundle: storeBundle)
+
+		trackForMemoryLeaks(sut, file: file, line: line)
+		return sut
 	}
 	
 	private func setupEmptyStoreState() {
@@ -82,5 +85,12 @@ class FeedStoreIntegrationTests: XCTestCase {
 	private func undoStoreSideEffects() {
 		
 	}
-	
+
+	private func testSpecificStoreURL() -> URL {
+		return cachesDirectory().appendingPathComponent("\(type(of: self)).store")
+	}
+
+	private func cachesDirectory() -> URL {
+		return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+	}
 }
