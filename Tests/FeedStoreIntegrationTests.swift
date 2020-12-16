@@ -42,17 +42,17 @@ class FeedStoreIntegrationTests: XCTestCase {
 	}
 	
 	func test_insert_overridesFeedInsertedOnAnotherInstance() {
-		//        let storeToInsert = makeSUT()
-		//        let storeToOverride = makeSUT()
-		//        let storeToLoad = makeSUT()
-		//
-		//        insert((uniqueImageFeed(), Date()), to: storeToInsert)
-		//
-		//        let latestFeed = uniqueImageFeed()
-		//        let latestTimestamp = Date()
-		//        insert((latestFeed, latestTimestamp), to: storeToOverride)
-		//
-		//        expect(storeToLoad, toRetrieve: .found(feed: latestFeed, timestamp: latestTimestamp))
+		let storeToInsert = makeSUT()
+		let storeToOverride = makeSUT()
+		let storeToLoad = makeSUT()
+
+		insert((uniqueImageFeed(), Date()), to: storeToInsert)
+
+		let latestFeed = uniqueImageFeed()
+		let latestTimestamp = Date()
+		insert((latestFeed, latestTimestamp), to: storeToOverride)
+
+		expect(storeToLoad, toRetrieve: .found(feed: latestFeed, timestamp: latestTimestamp))
 	}
 	
 	func test_delete_deletesFeedInsertedOnAnotherInstance() {
