@@ -56,15 +56,15 @@ class FeedStoreIntegrationTests: XCTestCase {
 	}
 	
 	func test_delete_deletesFeedInsertedOnAnotherInstance() {
-		//        let storeToInsert = makeSUT()
-		//        let storeToDelete = makeSUT()
-		//        let storeToLoad = makeSUT()
-		//
-		//        insert((uniqueImageFeed(), Date()), to: storeToInsert)
-		//
-		//        deleteCache(from: storeToDelete)
-		//
-		//        expect(storeToLoad, toRetrieve: .empty)
+		let storeToInsert = makeSUT()
+		let storeToDelete = makeSUT()
+		let storeToLoad = makeSUT()
+
+		insert((uniqueImageFeed(), Date()), to: storeToInsert)
+
+		deleteCache(from: storeToDelete)
+
+		expect(storeToLoad, toRetrieve: .empty)
 	}
 	
 	// - MARK: Helpers
